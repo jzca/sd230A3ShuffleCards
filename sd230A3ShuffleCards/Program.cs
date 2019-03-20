@@ -10,6 +10,10 @@ namespace sd230A3ShuffleCards
     {
         static void Main(string[] args)
         {
+            var myHandler = new Handler();
+
+            myHandler.OpenMeun();
+
         }
     }
 }
