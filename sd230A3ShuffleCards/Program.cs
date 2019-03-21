@@ -12,30 +12,38 @@ namespace sd230A3ShuffleCards
         {
             var myHandler = new Handler();
 
-            myHandler.ShowFirstTimeAllCards();
+            //You have these method;
+            myHandler.ShowAllCards();
             myHandler.ShuffleCards();
-            myHandler.ShowAfterShufflingAllCards();
+            myHandler.ShowAllCards();
+            myHandler.DealOneCard();
+            myHandler.DeckCounter();
             myHandler.ShuffleCards();
-            myHandler.ShowAfterShufflingAllCards();
-            //myHandler.ShowAfterShufflingAllCards();
-            //myHandler.ShowAfterShufflingAllCards();
+            myHandler.ShowAllCards();
+            myHandler.DealAllCard();
+            myHandler.DeckCounter();
 
+            
 
-            //myHandler.ShowFirstTimeAllCards();
+            //                myHandler.ShowFirstTimeAllCards();
             //myHandler.ShuffleCards();
             //myHandler.ShowAfterShufflingAllCards();
             //myHandler.DealOneCard();
-            //myHandler.DealOneCard();
-            ////myHandler.DeckCounterAfterShuffling();
-            //myHandler.ShuffleCards();
-            //myHandler.ShowAfterShufflingAllCards();
-            //myHandler.ShowAllCard();
-            //myHandler.ShuffleCards();
-            //myHandler.ShowAllCard();
-            //myHandler.DealOneCard();
-            //myHandler.ShowAllCard();
+            //myHandler.DeckCounterAfterShuffling();
             //myHandler.DealAllCard();
-            //Console.WriteLine($"Num of Card Left: {myHandler.DeckCounter}");
+            //myHandler.DeckCounterAfterShuffling();
+            //myHandler.ShuffleCards();
+            //myHandler.ShowAfterShufflingAllCards();
+            //myHandler.DealOneCard();
+            //myHandler.DeckCounterAfterShuffling();
+
+
+            //myHandler.DealOneCard();
+            //myHandler.DealOneCard();
+            //myHandler.DealOneCard();
+
+
+
 
             // Important!!
             Console.ReadLine();

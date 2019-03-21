@@ -23,14 +23,14 @@ namespace sd230A3ShuffleCards
             RdmPicker = new Random();
             SubPrimaryDeck = new List<int>
             {
-               1, 2, 3, 4, 5, 6, 7, 8
-               //9, 10, 11, 12, 13, 14, 15,
-               //16, 17, 18, 19, 20, 21, 22,
-               //23, 24, 25, 26, 27, 28, 29,
-               //30, 31, 32, 33, 34, 35, 36,
-               //37, 38, 39, 40, 41, 42, 43,
-               //44, 45, 46, 47, 48, 49, 50,
-               //51, 52
+               1, 2, 3, 4, 5, 6, 7, 8,
+               9, 10, 11, 12, 13, 14, 15,
+               16, 17, 18, 19, 20, 21, 22,
+               23, 24, 25, 26, 27, 28, 29,
+               30, 31, 32, 33, 34, 35, 36,
+               37, 38, 39, 40, 41, 42, 43,
+               44, 45, 46, 47, 48, 49, 50,
+               51, 52
             };
             SubMediumDeck = new List<int>();
             MainDeck = new List<int>();
@@ -46,19 +46,20 @@ namespace sd230A3ShuffleCards
                 SubPrimaryDeck = new List<int>
                 {
                    1, 2, 3, 4, 5, 6, 7, 8,
-                   //9, 10, 11, 12, 13, 14, 15,
-                   //16, 17, 18, 19, 20, 21, 22,
-                   //23, 24, 25, 26, 27, 28, 29,
-                   //30, 31, 32, 33, 34, 35, 36,
-                   //37, 38, 39, 40, 41, 42, 43,
-                   //44, 45, 46, 47, 48, 49, 50,
-                   //51, 52
+                   9, 10, 11, 12, 13, 14, 15,
+                   16, 17, 18, 19, 20, 21, 22,
+                   23, 24, 25, 26, 27, 28, 29,
+                   30, 31, 32, 33, 34, 35, 36,
+                   37, 38, 39, 40, 41, 42, 43,
+                   44, 45, 46, 47, 48, 49, 50,
+                   51, 52
                 };
             }
             else
             {
-                SubPrimaryDeck = MainDeck;
-                SubMediumDeck = new List<int>();
+                MainDeck.ForEach(p => SubPrimaryDeck.Add(p));
+                MainDeck.Clear();
+                SubMediumDeck.Clear();
             }
 
 
@@ -92,7 +93,7 @@ namespace sd230A3ShuffleCards
                 ShuffleAgain();
 
             }
-            Console.WriteLine("**** Shuffled *******");
+            Console.WriteLine($"**** Shuffled *******");
 
         }
 
@@ -127,33 +128,68 @@ namespace sd230A3ShuffleCards
 
         public void DealAllCard()
         {
-            MainDeck = new List<int>();
-            SubPrimaryDeck = new List<int>();
+            MainDeck.Clear();
+            SubPrimaryDeck.Clear();
             Console.WriteLine("No cards left any more");
             Console.WriteLine("You may quit the app now");
         }
 
-        public void ShowFirstTimeAllCards()
+        public void ShowAllCards()
         {
+            if (CounterForShow == 0)
+            {
+                CounterForShow++;
+                Console.WriteLine($"***** Welcome! You have *******");
+                SubPrimaryDeck.ForEach(p => Console.WriteLine($"{p}"));
+                Console.WriteLine($"***** The End *******");
+            }
+            else
+            {
+                Console.WriteLine($"***** You Still have *******");
+                MainDeck.ForEach(f => Console.WriteLine($"{f}"));
+                Console.WriteLine($"***** The End *******");
+            }
 
-            Console.WriteLine($"***** Welcome! You have *******");
-            SubPrimaryDeck.ForEach(p => Console.WriteLine($"{p}"));
-            Console.WriteLine($"***** The End *******");
+
         }
 
-        public void ShowAfterShufflingAllCards()
+
+        public void DeckCounter()
         {
-
-            Console.WriteLine($"***** Afer Shuffling, You Still have *******");
-            //Console.WriteLine($"***** The End *******");
-            MainDeck.ForEach(f => Console.WriteLine($"{f}"));
-
+            if (CounterForShow == 0)
+            {
+                CounterForShow++;
+                Console.WriteLine($"Num of Card Left: {SubPrimaryDeck.Count}");
+            }
+            else
+            {
+                Console.WriteLine($"Num of Card Left: {MainDeck.Count}");
+            }
         }
 
-        public void DeckCounterAfterShuffling()
-        {
-            Console.WriteLine($"Num of Card Left: {MainDeck.Count}");
-        }
+        //// In Case
+
+        //public void DeckCounterAfterShuffling()
+        //{
+        //    Console.WriteLine($"Num of Card Left: {MainDeck.Count}");
+        //}
+
+        //public void ShowFirstTimeAllCards()
+        //{
+
+        //    Console.WriteLine($"***** Welcome! You have *******");
+        //    SubPrimaryDeck.ForEach(p => Console.WriteLine($"{p}"));
+        //    Console.WriteLine($"***** The End *******");
+        //}
+
+        //public void ShowAfterShufflingAllCards()
+        //{
+
+        //    Console.WriteLine($"***** Afer Shuffling, You Still have *******");
+        //    MainDeck.ForEach(f => Console.WriteLine($"{f}"));
+        //    Console.WriteLine($"***** The End *******");
+
+        //}
 
 
     }
