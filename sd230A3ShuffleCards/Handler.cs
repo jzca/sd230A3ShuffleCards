@@ -122,8 +122,16 @@ namespace sd230A3ShuffleCards
 
         public void DealOneCard()
         {
-            Console.WriteLine($"You dealt: {MainDeck[0]}");
-            MainDeck.RemoveAt(0);
+            if(CounterForShuffle != 0)
+            {
+                Console.WriteLine($"You dealt: {MainDeck[0]}");
+                MainDeck.RemoveAt(0);
+            }
+            else
+            {
+                Console.WriteLine($"Firstly, you have to shuffle the deck!");
+            }
+
 
         }
 

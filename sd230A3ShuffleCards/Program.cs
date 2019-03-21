@@ -20,6 +20,7 @@ namespace sd230A3ShuffleCards
             //DeckCounter();
 
             myHandler.DeckCounter(); // 52
+            myHandler.DealOneCard(); //error msg
             myHandler.ShowAllCards();
             myHandler.ShuffleCards();
             myHandler.ShowAllCards();
