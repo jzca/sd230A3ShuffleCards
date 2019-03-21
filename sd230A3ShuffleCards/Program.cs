@@ -12,36 +12,23 @@ namespace sd230A3ShuffleCards
         {
             var myHandler = new Handler();
 
-            //You have these method;
+            // You have these 5 method;
+                //ShowAllCards();
+                //ShuffleCards();
+                //DealOneCard();
+                //DealAllCard();
+                //DeckCounter();
+
             myHandler.ShowAllCards();
             myHandler.ShuffleCards();
             myHandler.ShowAllCards();
-            myHandler.DealOneCard();
-            myHandler.DeckCounter();
+            myHandler.DealOneCard(); // rm one
+            myHandler.DealOneCard(); // rm another one
+            myHandler.DeckCounter(); // 50
             myHandler.ShuffleCards();
             myHandler.ShowAllCards();
             myHandler.DealAllCard();
-            myHandler.DeckCounter();
-
-            
-
-            //                myHandler.ShowFirstTimeAllCards();
-            //myHandler.ShuffleCards();
-            //myHandler.ShowAfterShufflingAllCards();
-            //myHandler.DealOneCard();
-            //myHandler.DeckCounterAfterShuffling();
-            //myHandler.DealAllCard();
-            //myHandler.DeckCounterAfterShuffling();
-            //myHandler.ShuffleCards();
-            //myHandler.ShowAfterShufflingAllCards();
-            //myHandler.DealOneCard();
-            //myHandler.DeckCounterAfterShuffling();
-
-
-            //myHandler.DealOneCard();
-            //myHandler.DealOneCard();
-            //myHandler.DealOneCard();
-
+            myHandler.DeckCounter(); // 0
 
 
 
