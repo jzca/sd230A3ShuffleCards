@@ -15,8 +15,8 @@ namespace sd230A3ShuffleCards
         private int OneBefore { get; set; }
         private int OneAfter { get; set; }
         private int Picker { get; set; }
-        //private int CounterForShuffle { get; set; }
-        //private int CounterForShow { get; set; }
+        private int CounterForShuffle { get; set; }
+        private int CounterForShow { get; set; }
 
         public Handler()
         {
@@ -34,34 +34,34 @@ namespace sd230A3ShuffleCards
             };
             SubMediumDeck = new List<int>();
             MainDeck = new List<int>();
-            //CounterForShuffle = 0;
-            //CounterForShow = 0;
+            CounterForShuffle = 0;
+            CounterForShow = 0;
         }
 
-        private void SinglePicker()
+        public void ShuffleCards()
         {
-            if (Picker < SubPrimaryDeck.Count)
+            if (CounterForShuffle == 0)
             {
-                SubMediumDeck.Add(SubPrimaryDeck[Picker]);
-                SubPrimaryDeck.RemoveAt(Picker);
-            }
-        }
-
-        private void ShuffleAgain()
-        {
-            while (SubMediumDeck.Count != 0)
-            {
-                Picker = RdmPicker.Next(0, SubMediumDeck.Count);
-                if (Picker < SubMediumDeck.Count)
+                CounterForShuffle++;
+                SubPrimaryDeck = new List<int>
                 {
-                    MainDeck.Add(SubMediumDeck[Picker]);
-                    SubMediumDeck.RemoveAt(Picker);
-                }
+                   1, 2, 3, 4, 5, 6, 7, 8,
+                   9, 10, 11, 12, 13, 14, 15,
+                   16, 17, 18, 19, 20, 21, 22,
+                   23, 24, 25, 26, 27, 28, 29,
+                   30, 31, 32, 33, 34, 35, 36,
+                   37, 38, 39, 40, 41, 42, 43,
+                   44, 45, 46, 47, 48, 49, 50,
+                   51, 52
+                };
             }
-        }
+            else
+            {
+                SubPrimaryDeck = MainDeck;
+                SubMediumDeck = new List<int>();
+            }
 
-        public void ShuffleCardsFirstTime()
-        {
+
 
             while (SubPrimaryDeck.Count != 0)
             {
@@ -95,48 +95,26 @@ namespace sd230A3ShuffleCards
             Console.WriteLine("**** Shuffled *******");
         }
 
-
-        public void ShuffleCardsAfter1stTime()
+        private void SinglePicker()
         {
-
-            while (MainDeck.Count != 0)
+            if (Picker < SubPrimaryDeck.Count)
             {
-                Picker = RdmPicker.Next(0, MainDeck.Count);
-                OneBefore = Picker - 1;
-                OneAfter = Picker + 1;
-
-                if (OneBefore > 0)
-                {
-                    SubMediumDeck.Add(MainDeck[OneBefore]);
-                    MainDeck.RemoveAt(OneBefore);
-                }
-                else
-                {
-                    if (Picker < MainDeck.Count)
-                    {
-                        SubMediumDeck.Add(MainDeck[Picker]);
-                        MainDeck.RemoveAt(Picker);
-                    }
-                }
-
-                if (OneAfter < MainDeck.Count)
-                {
-                    SubMediumDeck.Add(MainDeck[OneAfter]);
-                    MainDeck.RemoveAt(OneAfter);
-                }
-                else
-                {
-                    if (Picker < MainDeck.Count)
-                    {
-                        SubMediumDeck.Add(MainDeck[Picker]);
-                        MainDeck.RemoveAt(Picker);
-                    }
-                }
-
-                ShuffleAgain();
-
+                SubMediumDeck.Add(SubPrimaryDeck[Picker]);
+                SubPrimaryDeck.RemoveAt(Picker);
             }
-            Console.WriteLine("**** Shuffled *******");
+        }
+
+        private void ShuffleAgain()
+        {
+            while (SubMediumDeck.Count != 0)
+            {
+                Picker = RdmPicker.Next(0, SubMediumDeck.Count);
+                if (Picker < SubMediumDeck.Count)
+                {
+                    MainDeck.Add(SubMediumDeck[Picker]);
+                    SubMediumDeck.RemoveAt(Picker);
+                }
+            }
         }
 
         public void DealOneCard()

@@ -13,12 +13,12 @@ namespace sd230A3ShuffleCards
             var myHandler = new Handler();
 
             myHandler.ShowFirstTimeAllCards();
-            myHandler.ShuffleCardsFirstTime();
+            myHandler.ShuffleCards();
             myHandler.ShowAfterShufflingAllCards();
             myHandler.DealOneCard();
             myHandler.DealOneCard();
             myHandler.DeckCounterAfterShuffling();
-            myHandler.ShuffleCardsAfter1stTime();
+            myHandler.ShuffleCards();
             myHandler.ShowAfterShufflingAllCards();
             //myHandler.ShowAllCard();
             //myHandler.ShuffleCards();
