@@ -17,6 +17,7 @@ namespace sd230A3ShuffleCards
         private int Picker { get; set; }
         private int CounterForShuffle { get; set; }
         private int CounterForShow { get; set; }
+        private int CounterForDeckAmt { get; set; }
 
         public Handler()
         {
@@ -156,9 +157,9 @@ namespace sd230A3ShuffleCards
 
         public void DeckCounter()
         {
-            if (CounterForShow == 0)
+            if (CounterForDeckAmt == 0)
             {
-                CounterForShow++;
+                CounterForDeckAmt++;
                 Console.WriteLine($"Num of Card Left: {SubPrimaryDeck.Count}");
             }
             else

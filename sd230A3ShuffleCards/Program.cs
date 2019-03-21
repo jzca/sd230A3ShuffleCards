@@ -13,12 +13,13 @@ namespace sd230A3ShuffleCards
             var myHandler = new Handler();
 
             // You have these 5 method;
-                //ShowAllCards();
-                //ShuffleCards();
-                //DealOneCard();
-                //DealAllCard();
-                //DeckCounter();
+            //ShowAllCards();
+            //ShuffleCards();
+            //DealOneCard();
+            //DealAllCard();
+            //DeckCounter();
 
+            myHandler.DeckCounter(); // 52
             myHandler.ShowAllCards();
             myHandler.ShuffleCards();
             myHandler.ShowAllCards();
